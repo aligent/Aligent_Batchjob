@@ -41,4 +41,14 @@ abstract class Aligent_Batchjob_Model_Job_Abstract extends Varien_Object {
         return $this->_aSteps[$vStepCode];
     }
 
+
+    /**
+     * Get the job code for this job.
+     *
+     * @return string Job code
+     */
+    public function getJobCode() {
+        return $this->_vJobCode;
+    }
+
 }

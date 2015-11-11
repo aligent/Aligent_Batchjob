@@ -1,7 +1,21 @@
 <?php
 
-
+/**
+ * Used to create a new CSV file and write a header row.  Use a <header> child
+ * node to define the key/value pairs for the internal field name and name to
+ * appear in the header row.  e.g.
+ *
+ * <header>
+ *     <entity_id>Entity Id</entity_id>
+ *     <created_at>Creation Date</created_at>
+ * </header>
+ * 
+ * Use with batchjob/itemTask_writeCsv and batchjob/step_closeCsv.
+ *
+ * @author Jim O'Halloran <jim@aligent.com.au>
+ */
 class Aligent_Batchjob_Model_Step_InitCsvWriter extends Aligent_Batchjob_Model_Step_Abstract {
+
     /**
      * Called to initiate processing on a given step.
      *

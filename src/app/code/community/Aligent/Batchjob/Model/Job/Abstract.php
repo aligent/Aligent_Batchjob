@@ -36,7 +36,8 @@ abstract class Aligent_Batchjob_Model_Job_Abstract extends Varien_Object {
     protected function _getStep($vStepCode) {
         if (!array_key_exists($vStepCode, $this->_aSteps)) {
             $oStepConfig = $this->_oJobConfig->steps->{$vStepCode};
-            $this->_aSteps[$vStepCode] = Mage::getModel($oStepConfig->model, array($vStepCode, $oStepConfig, $this))->setLogger($this->getLogger());
+            $this->_aSteps[$vStepCode] = Mage::getModel($oStepConfig->model, array($vStepCode, $oStepConfig, $this))
+                ->setLogger($this->getLogger());
         }
         return $this->_aSteps[$vStepCode];
     }

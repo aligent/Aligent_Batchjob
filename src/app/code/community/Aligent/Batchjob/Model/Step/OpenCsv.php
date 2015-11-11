@@ -9,7 +9,7 @@ class Aligent_Batchjob_Model_Step_OpenCsv extends Aligent_Batchjob_Model_Step_Ab
 
     public function run() {
         $vLocalFileName = $this->getParentJob()->getFilename();
-        $this->getLogger()->log("Openning CSV file...".$vLocalFileName, Zend_Log::INFO);
+        $this->getLogger()->log("Opening CSV file... ".$vLocalFileName, Zend_Log::INFO);
 
         $hCsv = fopen($vLocalFileName, $this->_getFileMode());
         $this->getParentJob()->setFileHandle($hCsv);

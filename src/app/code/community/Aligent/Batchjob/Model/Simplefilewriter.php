@@ -1,12 +1,18 @@
 <?php
 
 class Aligent_Batchjob_Model_Simplefilewriter extends Varien_Object {
-    
-    const DELIMITER = "\t";
-    const ENCLOSURE = '"';
+
+    public function __construct() {
+        parent::__construct();
+
+        $this->setDelimiter(',')
+            ->setEnclosure('"');
+    }
+
 
     public function writeHeaderRow() {
-        $this->getStreamWriter()->streamWriteCsv(array_values($this->getHeader()), self::DELIMITER, self::ENCLOSURE);
+        $this->getStreamWriter()->streamWriteCsv(array_values($this->getHeader()), $this->getDelimiter(), $this->getEnclosure());
+        return $this;
     }
     
     public function writeDataRow($aData) {
@@ -18,6 +24,7 @@ class Aligent_Batchjob_Model_Simplefilewriter extends Varien_Object {
                 $aRow[] = '';
             }
         }
-        $this->getStreamWriter()->streamWriteCsv($aRow, self::DELIMITER, self::ENCLOSURE);
+        $this->getStreamWriter()->streamWriteCsv($aRow, $this->getDelimiter(), $this->getEnclosure());
+        return $this;
     }
 }

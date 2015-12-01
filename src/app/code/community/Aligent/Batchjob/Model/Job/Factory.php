@@ -25,7 +25,7 @@ class Aligent_Batchjob_Model_Job_Factory {
             if ((string) $vJobLoggerAlias == "") {
                 $vJobLoggerAlias = 'batchjob/logger';
             }
-            $oJobModel->setLogger(Mage::getModel($vJobLoggerAlias, [$vJobCode, Mage::getStoreConfig(self::XML_PATH_EMAIL_LOG_LEVEL)]));
+            $oJobModel->setLogger(Mage::getModel($vJobLoggerAlias, array($vJobCode, Mage::getStoreConfig(self::XML_PATH_EMAIL_LOG_LEVEL))));
 
             $this->_aJobs[$vJobCode] = $oJobModel;
         }

@@ -57,8 +57,8 @@ abstract class Aligent_Batchjob_Model_Transport_Abstract extends Varien_Object {
     }
     
     protected static function _getFileSpecForFileType($fileType) {
-        // TODO return prefix and sufgfix for each fule type here.
-        return array('prefix' => $prefix, 'suffix' => $suffix);
+        // TODO return prefix and suffix for each file type here.
+        return array('prefix' => '', 'suffix' => '');
     }
 
 }

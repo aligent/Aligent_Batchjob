@@ -10,7 +10,7 @@
  */
 class Aligent_Batchjob_Model_Step_FlushCache extends Aligent_Batchjob_Model_Step_Abstract {
 
-    protected $_aCaches = [];
+    protected $_aCaches = array();
 
     public function __construct($aArgs) {
         parent::__construct($aArgs);

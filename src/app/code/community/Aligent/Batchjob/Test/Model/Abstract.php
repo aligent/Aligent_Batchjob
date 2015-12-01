@@ -91,7 +91,7 @@ abstract class Aligent_Batchjob_Test_Model_Abstract extends EcomDev_PHPUnit_Test
      * @return EcomDev_PHPUnit_Mock_Proxy
      */
     protected function _instantiateMockLogger() {
-        $oLoggerMock = $this->getModelMock('batchjob/logger', ['log'], false, ['test', 6]);
+        $oLoggerMock = $this->getModelMock('batchjob/logger', array('log'), false, array('test', 6));
         $oLoggerMock->expects($this->any())
             ->method('log')
             ->will($this->returnSelf());

@@ -11,14 +11,14 @@
  */
 class Aligent_Batchjob_Model_Step_FlushVarnish extends Aligent_Batchjob_Model_Step_Abstract {
 
-    protected $_aStoreIds = [];
+    protected $_aStoreIds = array();
 
     public function __construct($aArgs) {
         parent::__construct($aArgs);
 
         if ($this->_oStepConfig->stores != '') {
             $aStoreCodes = array_map('trim', explode(',', $this->_oStepConfig->stores));
-            $this->_aStoreIds = Mage::getModel('core/store')->getCollection()->addFieldToFilter('code', ['in' => $aStoreCodes])->getAllIds();
+            $this->_aStoreIds = Mage::getModel('core/store')->getCollection()->addFieldToFilter('code', array('in' => $aStoreCodes))->getAllIds();
         }
     }
 

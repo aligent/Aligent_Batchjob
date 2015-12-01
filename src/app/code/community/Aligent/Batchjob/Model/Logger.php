@@ -13,7 +13,7 @@ class Aligent_Batchjob_Model_Logger {
     protected $_vJobCode = "none";
 
     protected $_iEmailLogLevel = Zend_Log::INFO;
-    protected $_aEmailMessages = [];
+    protected $_aEmailMessages = array();
     protected $_oFormatter;
 
     public function __construct($aParams) {
@@ -97,7 +97,7 @@ class Aligent_Batchjob_Model_Logger {
      */
     public function getLogToEmail() {
         $vText = implode(PHP_EOL, $this->_aEmailMessages);
-        $this->_aEmailMessages = [];
+        $this->_aEmailMessages = array();
         return $vText;
     }
 
